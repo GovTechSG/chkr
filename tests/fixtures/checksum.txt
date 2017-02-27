@@ -1,0 +1,3 @@
+4d93d51945b88325c213640ef59fc50b  foo.txt
+4d93d51945b88325c213640ef59fc50a  bar.txt
+ce5188defed222ca612b41580e0d5fe7  file-does-not-exist

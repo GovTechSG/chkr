@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+export PATH=$PATH:~/.cargo/bin
+cargo fmt -- --write-mode diff || \
+  echo "##teamcity[buildProblem description='rustfmt has failed' identity='rustfmt']"
+
+RUSTFLAGS="${RUSTFLAGS:-} -D warnings" cargo test || \
+  echo "##teamcity[buildProblem description='Cargo tests have failed' identity='cargo']"
